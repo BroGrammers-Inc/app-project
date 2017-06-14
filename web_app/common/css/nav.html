@@ -1,0 +1,87 @@
+<html>
+<head><title>Nav</title>
+    <link rel="stylesheet" href="nav-style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body>
+<header>
+<div class="container">
+    <!--<img src="pu-logo.jpeg" style="height:150px;float:left;"> -->
+  <h1 class="logo">Panjab<span>University</span></h1>
+  
+  <nav class="site-nav">
+      <ul>
+        <li><a href=""><i class="fa fa-home site-nav--icon"></i>Home</a></li>
+        <li><a href=""><i class="fa fa-info site-nav--icon"></i>Maps</a></li>
+        <li><a href=""><i class="fa fa-pencil site-nav--icon"></i>People</a></li>
+        <li><a href=""><i class="fa fa-usd site-nav--icon"></i>Dineries</a></li>
+        <li><a href=""><i class="fa fa-envelope site-nav--icon"></i>About</a></li>
+      </ul>
+  </nav>
+  
+  <div class="menu-toggle">
+    <div class="hamburger"></div>
+  </div>
+  
+</div>
+<script type="text/javascript">
+    $('.menu-toggle').click(function() {
+  
+  $('.site-nav').toggleClass('site-nav--open');
+  $(this).toggleClass('open');
+  
+})
+</script>
+
+</header>
+    
+    
+    
+    <!--Type your shit here -->
+    
+    
+    <div class="clearfix"></div>
+        <!--Footer Begins-->
+    <footer>
+        <div id="footer-inner">
+            <section class="one-third" id="footer-third">
+                <h3>Contact</h3>
+                <p class="footercontact">The Gym<br/>
+                    <b class="phone">555-555-5555</b><br/><br/>
+                    500 Washington Road<br/>
+                    Seattle, WA 98101</p>
+            </section>
+            <section class="one-third" id="footer-third">
+                <h3>Social</h3><br/>
+                <ul class="social">
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://plus.google.com" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </section>
+            <section class="one-third" id="footer-third-last">
+            <h3>Pages</h3>
+                <br/>
+                <h5>
+                    <a href="index_1.html">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Facility</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Contact</a>
+                </h5>
+            </section>
+        </div>
+    </footer>
+    <footer class="second-footer">
+    <p>&copy;The Gym,2017</p>
+    </footer>
+
+</body>
+</html>
+
+
