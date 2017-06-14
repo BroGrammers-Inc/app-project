@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PU Campus Portal | Maps</title>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
+        <link  href="../../common/css/nomalise.css" rel="stylesheet">
+        <link href="../../common/css/main.css" rel="stylesheet">
+        <link  href="./css/style.css" rel="stylesheet">  
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script> 
+        <script> 
+            $("#map_button").click(function()
+            {   var t = $_POST["map_search"];
+                $(".map").append(t);
+            });
+       </script> 
+    </head>
+    <body>
+      <div class="container">  
+        <nav class="clearfix">
+            <ul class="clearfix">
+                <a href="../home/welcome.html" class="nav-list"><li>Home</li></a>
+                <a href="#" class="active nav-list"><li>Maps</li></a>
+                <a href="../people/people.html" class="nav-list"><li>People</li></a>
+                <button type="extras" class="extras"> <img src="./images/menu_button.svg" alt="no menu"></button>
+                <ul class = "clearfix menu">
+                            <a href="../about/about.html" class="nav-list2"><li>About PU</li></a>
+                            <a href="../courses/courses.html" class="nav-list2"><li>Courses</li></a>
+                            <a href="../dining/dining.html" class="nav-list2"><li>Dining</li></a>
+                            <a href="../libraries/libraries.html" class="nav-list2"><li>Libraries</li></a>
+                            <a href="../news/news.html" class="nav-list2"><li>News</li></a>
+                            <a href="../events/events.html" class="nav-list2"><li>Events</li></a>
+                            <a href="../emergency/emergency.html" class="nav-list2"><li>Emergency</li></a> 
+                    </ul>  
+            </ul>
+        </nav>
+        <section>
+            <div class="search">
+                <form method="POST">
+                    <input type="text" name="" id="map_search" placeholder="Look for Places, Eateries, Libraries, Landmarks ....">
+                <button type="button" id="map_button"><img src="./images/search.svg" alt="not displ"></button>    
+                </form>
+            </div>    
+        </section>
+      <div class="map">
+          <div class="container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2038.6193586144348!2d76.76571970674505!3d30.759548783738968!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1497332233054" frameborder="0" style="border:0"></iframe>
+        </div> 
+      </div>  
+        
+    </body>
+
+</html>
