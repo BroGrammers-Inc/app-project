@@ -3,8 +3,12 @@
     <head><title>Faculty Profile</title></head>
     <body >
         <h1 align="center">FACULTY PROFILE
-        <form  action="login.html"><input type="submit" value="ADMIN LOGIN"></form>
+        <form action="profile.php" method="post">
+            <input type="text" placeholder="Search here...." name="sear">
+            <input type="submit" name="sbut" value="search">
+        </form>
         </h1>
+       
         <table border='2px'align="center">
             <tr id="hrow">
                 <td>S.No</td>
@@ -23,12 +27,17 @@
         define('DB_PASSWORD','');
             define('DB_HOST','localhost');
             $link= new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-            $res = $link->query("select * from uietdb");
-    
-        if ($res->num_rows > 0) {
-            while($row = $res->fetch_assoc()) 
-            {
-               echo ' <tr>
+            if(isset($_POST["sear"])){$ser = $_POST["sear"];}
+            else{$ser="";}
+            if($ser=="")
+            {$res = $link->query("select * from uietdb");            }
+            else{
+            $res = $link->query("select * from uietdb where Concat(name, '', phone, '', designation, '',department, '',description) like '%$ser%'");    
+            }
+            if ($res->num_rows > 0) {
+                while($row = $res->fetch_assoc()) 
+                    {
+                        echo ' <tr>
                                     <td>'.$row["ID"].'</td>
                                     <td>'.$row["name"].'</td>
                                     <td>'.$row["phone"].'</td>
@@ -36,16 +45,20 @@
                                     <td>'.$row["designation"].'</td>
                                     <td>'.$row["description"].'</td>
                                     </tr>
-                ';
-              
-                // echo "s.no" . $row["s.no"]. "<br/> Name: " . $row["name"]. "<br/>Phone :" . $row["phone"]. "<br/>department :" . $row["department"] . "<br/>Designation :" . $row["designation"] ."<br/>description :" . $row["description"];
-            }
-        } else
-        {echo "0 results";}
+                        ';
+                    }
+            } else
+                {echo "0 results";}
+            $link->close();
 
-        $link->close();
+    
     ?>
             
                     </table>
+        <h2 align="right">
+        <form action="login.html">
+            <input type="submit" value="ADMIN LOGIN">
+        </form>
+        </h2>
     </body>
 </html>
